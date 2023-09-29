@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Cake",
+  "author": "Hoang Ngo",
+  "version": "0.0.1",
+  "description": "Opens a new tab with the cached link on medium.com.",
+  "homepage_url": "https://github.com/hoangnv735/cake",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "*://*.medium.com/*"  // Restrict addon to medium.com
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "Cake"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.medium.com/*"]
+    }
+  ]
+}
+
